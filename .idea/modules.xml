@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/DOBL-Test2.iml" filepath="$PROJECT_DIR$/.idea/DOBL-Test2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Buchhandlung/buchhandlung.iml" filepath="$PROJECT_DIR$/Buchhandlung/buchhandlung.iml" />
+      <module fileurl="file://$PROJECT_DIR$/druckerei/druckerei.iml" filepath="$PROJECT_DIR$/druckerei/druckerei.iml" />
+      <module fileurl="file://$PROJECT_DIR$/order/order.iml" filepath="$PROJECT_DIR$/order/order.iml" />
+    </modules>
+  </component>
+</project>
