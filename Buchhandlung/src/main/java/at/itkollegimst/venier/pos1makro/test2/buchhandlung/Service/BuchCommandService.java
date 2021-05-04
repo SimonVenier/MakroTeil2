@@ -3,12 +3,14 @@ package at.itkollegimst.venier.pos1makro.test2.buchhandlung.Service;
 import at.itkollegimst.venier.pos1makro.test2.buchhandlung.domain.Buch;
 import at.itkollegimst.venier.pos1makro.test2.buchhandlung.domain.CreateBuch;
 import at.itkollegimst.venier.pos1makro.test2.buchhandlung.repo.RepoBuch;
+import org.springframework.stereotype.Service;
 
-public class CS {
+@Service
+public class BuchCommandService {
 
     private RepoBuch repoBuch;
 
-    public CS(RepoBuch repoBuch) {
+    public BuchCommandService(RepoBuch repoBuch) {
         this.repoBuch = repoBuch;
     }
 
