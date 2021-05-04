@@ -18,8 +18,8 @@ public class Buch {
     String buchnummer;
     double preis;
 
-    public Buch(Long id, String name, String buchnummer, double preis) {
-        this.id = id;
+    public Buch(CreateBuch createBuch) {
+
         this.name = name;
         this.buchnummer = buchnummer;
         this.preis = preis;
@@ -28,6 +28,7 @@ public class Buch {
     public Buch() {
 
     }
+
 
     public Long getId() {
         return id;
