@@ -1,4 +1,4 @@
-package at.itkollegimst.venier.pos1makro.test2.buchhandlung.domain.buchP;
+package at.itkollegimst.venier.pos1makro.test2.buchhandlung.domain;
 
 import lombok.Data;
 
@@ -16,10 +16,18 @@ public class Buch {
 
     String name;
     String buchnummer;
-    boolean buchdruck;
     double preis;
 
+    public Buch(Long id, String name, String buchnummer, double preis) {
+        this.id = id;
+        this.name = name;
+        this.buchnummer = buchnummer;
+        this.preis = preis;
+    }
 
+    public Buch() {
+
+    }
 
     public Long getId() {
         return id;
@@ -43,14 +51,6 @@ public class Buch {
 
     public void setBuchnummer(String buchnummer) {
         this.buchnummer = buchnummer;
-    }
-
-    public boolean isBuchdruck() {
-        return buchdruck;
-    }
-
-    public void setBuchdruck(boolean buchdruck) {
-        this.buchdruck = buchdruck;
     }
 
     public double getPreis() {
