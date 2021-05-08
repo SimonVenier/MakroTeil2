@@ -1,11 +1,11 @@
 package at.itkollegimst.venier.pos1makro.test2.buchhandlung.api.rest;
 
+import at.itkollegimst.venier.pos1makro.test2.buchhandlung.Exception.KeinBuchVorhandenExcep;
 import at.itkollegimst.venier.pos1makro.test2.buchhandlung.Service.BuchCommandService;
+import at.itkollegimst.venier.pos1makro.test2.buchhandlung.Service.BuchQueryService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
@@ -15,17 +15,17 @@ import java.net.URI;
 public class BuchContr {
 
     private BuchCommandService buchCommandService;
+    private BuchQueryService buchQueryService;
 
-    public BuchContr(BuchCommandService buchCommandService) {
+    public BuchContr(BuchCommandService buchCommandService, BuchQueryService buchQueryService) {
 
         this.buchCommandService = buchCommandService;
+        this.buchQueryService = buchQueryService;
 
     }
 
     @PostMapping
     public ResponseEntity<?> createBuch(@RequestBody CreateBuchdto createBuchdto){
-
-        System.out.println("========================================================================================");
 
         buchCommandService.buchErstellen(BuchdtoMapper.toCreateBuch2Command(createBuchdto));
 
@@ -36,6 +36,15 @@ public class BuchContr {
                 .toUri();
 
         return ResponseEntity.created(location).build();
+
+    }
+
+    @GetMapping("/{buchnummer}")
+    public ResponseEntity<CreateBuchdto> getBuch(@PathVariable String buchnummer) throws KeinBuchVorhandenExcep {
+
+        return new ResponseEntity<>(BuchEntitydtoMapper.createBuchdto(
+
+              buchQueryService.getBuchByBuchnummer(buchnummer)), HttpStatus.OK);
 
     }
 

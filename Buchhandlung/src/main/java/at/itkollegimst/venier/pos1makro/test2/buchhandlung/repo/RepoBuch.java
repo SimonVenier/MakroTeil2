@@ -7,6 +7,6 @@ import java.util.Optional;
 
 public interface RepoBuch extends JpaRepository<Buch, Long> {
 
-    Optional<Buch> getBuchByBuchnummer(String BN);
+    Optional<Buch> getBuchByBuchnummer(String bn);
 
 }
