@@ -3,14 +3,14 @@ package at.itkollegimst.venier.pos1makro.test2.order.Dtos;
 import lombok.Value;
 
 @Value
-public class BestellungRdto {
+public class CreateBestellungDto {
 
     String bestellnummer;
     String buchnummer;
     double preis;
     boolean gedruckt;
 
-    public BestellungRdto(String bestellnummer, String buchnummer, double preis, boolean gedruckt) {
+    public CreateBestellungDto(String bestellnummer, String buchnummer, double preis, boolean gedruckt) {
         this.bestellnummer = bestellnummer;
         this.buchnummer = buchnummer;
         this.preis = preis;
