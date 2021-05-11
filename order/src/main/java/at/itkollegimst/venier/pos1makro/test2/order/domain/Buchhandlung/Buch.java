@@ -22,6 +22,10 @@ public class Buch {
         this.buchnummer = createBuch.getBuchnummer();
     }
 
+    public Buch() {
+
+    }
+
     public String getBuchnummer() {
         return buchnummer;
     }
