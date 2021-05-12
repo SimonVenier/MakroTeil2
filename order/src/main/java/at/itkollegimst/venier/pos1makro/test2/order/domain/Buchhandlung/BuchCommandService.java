@@ -1,7 +1,11 @@
 package at.itkollegimst.venier.pos1makro.test2.order.domain.Buchhandlung;
 
 import at.itkollegimst.venier.pos1makro.test2.order.Repos.RepoBuch;
+import org.springframework.stereotype.Service;
 
+import javax.persistence.SecondaryTable;
+
+@Service
 public class BuchCommandService {
 
     private RepoBuch repoBuch;

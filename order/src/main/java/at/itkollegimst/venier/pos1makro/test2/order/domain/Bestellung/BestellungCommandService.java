@@ -3,20 +3,17 @@ package at.itkollegimst.venier.pos1makro.test2.order.domain.Bestellung;
 import at.itkollegimst.venier.pos1makro.test2.order.Repos.RepoBestellung;
 import at.itkollegimst.venier.pos1makro.test2.order.domain.Buchhandlung.BuchCommandService;
 import at.itkollegimst.venier.pos1makro.test2.order.domain.Buchhandlung.BuchQueryService;
+import org.springframework.stereotype.Service;
 
+@Service
 public class BestellungCommandService {
 
-    private RepoBestellung repoBestellung;
-    private BestellungQueryService bestellungQueryService;
-    private BuchCommandService buchCommandService;
-    private BuchQueryService buchQueryService;
+    RepoBestellung repoBestellung;
+    BestellungQueryService bestellungQueryService;
 
-    public BestellungCommandService(RepoBestellung repoBestellung, BestellungQueryService bestellungQueryService,
-                                    BuchCommandService buchCommandService, BuchQueryService buchQueryService) {
+    public BestellungCommandService(RepoBestellung repoBestellung, BestellungQueryService bestellungQueryService) {
         this.repoBestellung = repoBestellung;
         this.bestellungQueryService = bestellungQueryService;
-        this.buchCommandService = buchCommandService;
-        this.buchQueryService = buchQueryService;
     }
 
     public void createBestellung(CreateBestellung createBestellung){

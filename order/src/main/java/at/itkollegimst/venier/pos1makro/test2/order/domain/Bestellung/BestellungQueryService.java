@@ -1,7 +1,9 @@
 package at.itkollegimst.venier.pos1makro.test2.order.domain.Bestellung;
 
 import at.itkollegimst.venier.pos1makro.test2.order.Repos.RepoBestellung;
+import org.springframework.stereotype.Service;
 
+@Service
 public class BestellungQueryService {
 
     private final RepoBestellung repoBestellung;
