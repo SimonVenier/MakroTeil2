@@ -1,6 +1,8 @@
 package at.itkollegimst.venier.pos1makro.test2.order.domain.Bestellung;
 
 
+import at.itkollegimst.venier.pos1makro.test2.order.Events.BestellungCrEvent;
+import at.itkollegimst.venier.pos1makro.test2.order.Events.BestellungCrEventDaten;
 import lombok.Data;
 import org.springframework.data.domain.AbstractAggregateRoot;
 
@@ -26,10 +28,23 @@ public class Bestellung extends AbstractAggregateRoot<Bestellung> {
         this.preis = createBestellung.getPreis();
         this.gedruckt = createBestellung.isGedruckt();
 
+        addDomainEvent(new BestellungCrEvent(new BestellungCrEventDaten(
+
+                this.bestellnummer,
+                this.buchnummer,
+                this.preis,
+                this.gedruckt
+
+        )));
+
 
     }
 
     public Bestellung() {
+    }
+
+    public void addDomainEvent(Object event){
+        registerEvent(event);
     }
 
     public Long getId() {
